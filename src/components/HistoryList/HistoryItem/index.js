@@ -1,10 +1,10 @@
 import React from 'react'
 
-const OutputItem = ()=> {
+const OutputHistory = ()=> {
     return (
         <div>
            output item 
         </div>
     )
 }
-export default OutputItem;
+export default OutputHistory;
