@@ -30,7 +30,7 @@ export default makeStyles((theme) => ({
     },
     gridItemHistory:{
         borderRadius:'5px',
-        border:'1px solid black'
+       
     },
     title:{
         textDecoration:'underline',
@@ -42,6 +42,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')] :{
         topContainer:{
             margin:'0',
+            
             top:'0',
             left:'0',
             height:'100%',

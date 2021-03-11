@@ -10,6 +10,7 @@ const App = () => {
   const [result, setResult] = useState(null);
   const [input, setInput] = useState('');
   const [error, setError] = useState(null);
+  const [historyList, setHistoryList] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [theme, setTheme] = useState({
     palette: {
@@ -21,18 +22,30 @@ const App = () => {
     setInput(e.target.value);
   }
 
+  const onDeleteItemHandler = (id) => {
+    setHistoryList((prev) => prev.filter((item) => item.id !== id));
+  }
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    try{
-      const result = ConvertNumberToEnglish(input);
-      setResult(result);
+    try {
+      const currentResult = ConvertNumberToEnglish(input);
+      setResult(currentResult);
       setError(null);
+      console.log(currentResult);
+      setHistoryList((prev) => [...prev, {
+        result: currentResult,
+        timestamp: new Date(),
+        id: prev.length
+      }
+      ]);
+      console.log(historyList);
 
-    }catch(error){
+    } catch (error) {
       setError(error.error);
       setResult(null);
     }
-    
+
     onClearHandler();
   }
   const onClearHandler = (e) => {
@@ -80,7 +93,7 @@ const App = () => {
 
           </Grid>
           <Grid className={classes.gridItemHistory} item md={6} xs={12}>
-            <HistoryList />
+            <HistoryList list={historyList} onDeleteItem={onDeleteItemHandler} />
 
           </Grid>
 
