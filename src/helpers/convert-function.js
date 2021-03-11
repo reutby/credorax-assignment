@@ -51,11 +51,11 @@ const ValidationCheck = (num)=>{
         // handling un-valid number 
         if(isNaN(num) || (num.length > 0 && num[0] === '0')){
             // eslint-disable-next-line no-throw-literal
-            throw {error:'not a valid number'};
+            throw {error:'Not a valid number'};
         }
         else if(num.length > 10){
             // eslint-disable-next-line no-throw-literal
-            throw {error:'the number is too big'}
+            throw {error:'The number is too big'}
         }
 }
 
@@ -65,14 +65,9 @@ const convertNumToEnglish =(num)=>{
         return dg_val[0];
     }
     
-    //maybe i will check for exceptions when runing the function from the 
-    // front-end component  
-    try{
-        ValidationCheck(num);
-    }catch(err){
-        return err;
-    }
-    
+    //this function throw an exception if the number is not valid
+    ValidationCheck(num);
+
     const translatedNumArray = [];
     if(num[0] === "-"){
         //if negative number the sentence will start with the word 'negative'
