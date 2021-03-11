@@ -1,20 +1,22 @@
-let th_val = ['', 'thousand', 'million', 'billion'];
-let dg_val = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
-let tw_val = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+const th_val = ['', 'thousand', 'million', 'billion'];
+const dg_val = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+const tw_val = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
 
-
-const translateElementRec = (num,translatedNumArray)=>{
+let translateElementRec = (num,translatedNumArray, isLastThreesome)=>{
     if(num >= 100){
         translatedNumArray.push(dg_val[Math.floor(num/100)]) ;
         translatedNumArray.push('hundred');
-        translateElementRec(Math.floor(num%100),translatedNumArray);
+        translateElementRec(Math.floor(num%100),translatedNumArray,isLastThreesome);
     }
     else if(num >=20){
-        let tens =tw_val[Math.floor(num/10)-2];   
+        let tens =tw_val[Math.floor(num/10)-2];  
         const dig = Math.floor(num%10);
         //if digit of the tens number is not 0 -> adding after the tens digit '-'
         // for example 'twenty-four'  
+        if(isLastThreesome){
+            translatedNumArray.push('and');
+        }
         if(dig){
             tens+='-';
             tens+=dg_val[dig];
@@ -22,6 +24,9 @@ const translateElementRec = (num,translatedNumArray)=>{
         }
     }
     else if(num >0){
+        if(isLastThreesome){
+            translatedNumArray.push('and');
+        }
         translatedNumArray.push(dg_val[num]);
        
     }
@@ -31,11 +36,14 @@ const translateElementRec = (num,translatedNumArray)=>{
 
 const translateElementToWord = (currentValue,index, translatedNumArray,length ) =>{
     const num = parseInt(currentValue);
-    translateElementRec(num,translatedNumArray);
-    translatedNumArray.push(th_val[length-index-1]);
-    if(length-index ===2 ){
-      translatedNumArray.push('and');
+    if(length === 1 || length -index > 1){
+        translateElementRec(num,translatedNumArray,false);
+    }else{
+        translateElementRec(num,translatedNumArray,true);
     }
+    
+    translatedNumArray.push(th_val[length-index-1]);
+    
      
 }
 
@@ -50,17 +58,19 @@ const ValidationCheck = (num)=>{
             throw {error:'the number is too big'}
         }
 }
-//still need to figure out where to put the 'and' word exactly
+
 const convertNumToEnglish =(num)=>{
 
+    if(num === '0'){
+        return dg_val[0];
+    }
+    
+    //maybe i will check for exceptions when runing the function from the 
+    // front-end component  
     try{
         ValidationCheck(num);
     }catch(err){
         return err;
-    }
-
-    if(num === '0'){
-        return dg_val[0];
     }
     
     const translatedNumArray = [];
@@ -72,12 +82,13 @@ const convertNumToEnglish =(num)=>{
     // creating an array that contain threesome from right to left for better analyzing
     //example : '2048' ->> ['2','048']
     const numArray = num.toString().match(/\d{1,3}(?=(\d{3})*$)/g);
-    
     //sending each threesome for 'translation'
     numArray.forEach((currentValue,index)=>translateElementToWord(currentValue, index, translatedNumArray,numArray.length));
     
     //join the translated number array to a one big sentence
     return  translatedNumArray.join(' ');   
 }
+
+
 
 export default convertNumToEnglish;
