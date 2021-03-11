@@ -26,13 +26,28 @@ export default makeStyles((theme) => ({
     },
     gridItem: {
         padding: '1rem',
-        
+        height:'auto',
     },
     gridItemHistory:{
         borderRadius:'5px',
         border:'1px solid black'
-    }
-
+    },
+    title:{
+        textDecoration:'underline',
+    },
+    result:{
+        fontSize:'1.5rem',
+        paddingTop:'.5rem',
+    },
+    [theme.breakpoints.down('sm')] :{
+        topContainer:{
+            margin:'0',
+            top:'0',
+            left:'0',
+            height:'100%',
+            transform:'none',
+        }
+    },
 
 
 }));
