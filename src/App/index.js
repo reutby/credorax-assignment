@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Grid, FormControlLabel, Switch, Typography } from "@material-ui/core";
-import { ConvertNumberForm, HistoryList } from "../";
+import { ConvertNumberForm, HistoryList } from "../components";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ConvertNumberToEnglish from "../../helpers/convert-function";
+import ConvertNumberToEnglish from "../helpers/convert-function";
 
 import useStyles from "./styles/App";
 const App = () => {
@@ -32,14 +32,12 @@ const App = () => {
       const currentResult = ConvertNumberToEnglish(input);
       setResult(currentResult);
       setError(null);
-      console.log(currentResult);
       setHistoryList((prev) => [...prev, {
         result: currentResult,
-        timestamp: new Date(),
-        id: prev.length
+        timestamp: new Date().toString(),
+        id: (new Date()).getTime()
       }
       ]);
-      console.log(historyList);
 
     } catch (error) {
       setError(error.error);
@@ -70,8 +68,8 @@ const App = () => {
       <CssBaseline />
 
       <Container className={classes.topContainer} maxWidth="md" >
-        <FormControlLabel labelPlacement="bottom" className={classes.darkModeSwitch}
-          control={<Switch checked={isDarkMode} onChange={ToggleDarkTheme} name="darkMode" />}
+        <FormControlLabel classes={{label:classes.label}} labelPlacement="bottom" className={classes.darkModeSwitch}
+          control={<Switch size="medium" checked={isDarkMode} onChange={ToggleDarkTheme} name="darkMode" />}
           label="DarkMode"
         />
         <Grid container spacing={3} className={classes.secondaryContainer}>

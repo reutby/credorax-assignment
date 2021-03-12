@@ -10,7 +10,6 @@ export default makeStyles((theme) => ({
         transform:'translate(-50%,-50%)',
         height:'auto',
         minHeight:'50rem',
-        margin:'0 1rem',
         padding:'5rem',
         borderRadius:'5px',
         boxShadow:'0 1rem 2rem rgba(0,0,0,.6)',
@@ -21,8 +20,12 @@ export default makeStyles((theme) => ({
         right:'0',
        
     },
+    label:{
+        fontSize:'1.5rem',
+    },
     secondaryContainer: {
         margin: '1rem',
+        display:'flex',
     },
     gridItem: {
         padding: '1rem',
@@ -39,13 +42,19 @@ export default makeStyles((theme) => ({
         fontSize:'1.5rem',
         paddingTop:'.5rem',
     },
-    [theme.breakpoints.down('sm')] :{
+    [theme.breakpoints.down('sm')]:{
         topContainer:{
+            width:'auto',
+        }
+    },
+    [theme.breakpoints.down('xs')] :{
+        topContainer:{
+            width:'100%',
             margin:'0',
-            
+            padding:'3rem 2rem',
             top:'0',
             left:'0',
-            height:'100%',
+            height:'100vh',
             transform:'none',
         }
     },
