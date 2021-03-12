@@ -10,7 +10,7 @@ const HistoryList = ({ list, onDeleteItem }) => {
             <Typography variant="h4" className={classes.title} >History:</Typography>
             <Grid container spacing={1} className={classes.listHistoryContainer}>
                 {
-                    list.map((element) => <Grid item key={element.id} className={classes.gridItem} cols={1}>
+                    list.map((element) => <Grid item key={element.id} className={classes.gridItem} xs={12}>
                         <HistoryItem item={element} onDelete={onDeleteItem} />
                     </Grid>)
                 }

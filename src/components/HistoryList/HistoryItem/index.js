@@ -7,11 +7,11 @@ const OutputHistory = ({ item, onDelete }) => {
 
     return (
         <div className={classes.itemContainer}>
-            <Typography variant="h5" className={classes.result}>{item.result}</Typography>
             <div className={classes.secondRow}>
-                <Typography variant="h6">{item.timestamp.toString()}</Typography>
-                <IconButton onClick={() => onDelete(item.id)}><DeleteOutline fontSize='large' /></IconButton>
+                <Typography variant="h5" className={classes.result}>{item.result}</Typography>
+                <Typography variant="h6">{item.timestamp.substr(0,item.timestamp.indexOf('GMT'))}</Typography>
             </div>
+            <IconButton className={classes.deleteButton} onClick={() => onDelete(item.id)}><DeleteOutline fontSize='large' /></IconButton>
         </div>
     )
 }

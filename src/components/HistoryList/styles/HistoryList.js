@@ -8,8 +8,15 @@ export default makeStyles((theme) => ({
         marginTop:'1rem',
         maxHeight:'40rem',
         overflowY:'scroll',
+        // flexDirection:'column',
         backgroundColor:'transparent',
+        position:'relative',
         
+    },
+    [theme.breakpoints.down('sm')] :{
+        listHistoryContainer:{
+            maxHeight:'30rem',
+        }
     }
   
 
