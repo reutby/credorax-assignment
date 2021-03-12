@@ -7,11 +7,11 @@ import ConvertNumberToEnglish from "../helpers/convert-function";
 
 import useStyles from "./styles/App";
 const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [result, setResult] = useState(null);
   const [input, setInput] = useState('');
   const [error, setError] = useState(null);
   const [historyList, setHistoryList] = useState([]);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [theme, setTheme] = useState({
     palette: {
       type: "light"

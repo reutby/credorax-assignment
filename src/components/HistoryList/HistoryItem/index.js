@@ -2,7 +2,7 @@ import React from 'react'
 import DeleteOutline from "@material-ui/icons/DeleteOutline";
 import { Typography, IconButton } from "@material-ui/core"
 import useStyles from "./styles/HistoryItem";
-const OutputHistory = ({ item, onDelete }) => {
+const HistoryItem = ({ item, onDelete }) => {
     const classes = useStyles();
 
     return (
@@ -15,4 +15,4 @@ const OutputHistory = ({ item, onDelete }) => {
         </div>
     )
 }
-export default OutputHistory;
+export default HistoryItem;
