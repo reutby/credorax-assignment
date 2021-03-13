@@ -1,8 +1,9 @@
 # Convert number to english word assignment
 
-##File Structure
+## File Structure
 
-credorax assignment
+`
+root
 |
 ------public---- index.html
 |         
@@ -24,10 +25,11 @@ credorax assignment
         ------ index.js
         |
         ------ index.css
-
+`
 each component folder contain the same structure file.
 for example **HistoryList** component:
 
+`
              ---- index.js ---> functional component
              |
              |
@@ -35,8 +37,9 @@ HistoryList--|--- styles --- HistoryList.js ---> makeStyles (hook generator)
              |               for styling the component 
              |
              ---- HistoryList.test.js ---> test file
+`
 
-##Project details
+## Project details
 
 *Using react.js version 18.14 for building the client side web application.
 *Using functional component and react hooks.
@@ -44,7 +47,7 @@ HistoryList--|--- styles --- HistoryList.js ---> makeStyles (hook generator)
 * Responsive design for mobile devices, iPad and all in between... 
 * All states are managed in the App component
 
-##Instructions
+## Instructions
 * clone the repository to your local environment.
 *Use `npm install` or `yarn install` for installing all necessary libraries.
 * Use `npm start` or `yarn start` for running the application on local host port 3000.
