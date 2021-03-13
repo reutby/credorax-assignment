@@ -5,8 +5,8 @@
 ![alt text](https://res.cloudinary.com/reutby/image/upload/v1615625466/credorax-assignment/project_file_structurepng_vjj5jk.png)
 
 
-Each component directory contain the same files structure.
-for example **HistoryList** component:
+Each component directory as well as App directory contain the same folder structure.
+For example **HistoryList** component:
 
 ![alt text](https://res.cloudinary.com/reutby/image/upload/v1615625471/credorax-assignment/component_directory_structute_io9pmx.png)
 
@@ -23,6 +23,6 @@ for example **HistoryList** component:
 * Clone the repository to your local environment.
 * Use `npm install` or `yarn install` for installing all necessary libraries.
 * Use `npm start` or `yarn start` for running the application on local host port 3000.
-* Use `npm run test` or `yarn run test` for running the unit tests.
+* Use `npm run test` or `yarn run test` for running all the unit tests.
 * Dark mode is highly recommended! :) 
 * Enjoy :)
