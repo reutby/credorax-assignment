@@ -1,6 +1,6 @@
-# Convert number to english word assignment
+# Convert number to english - client side web application
 
-## Project Structure
+## Project folder structure
 
 ![alt text](https://res.cloudinary.com/reutby/image/upload/v1615625466/credorax-assignment/project_file_structurepng_vjj5jk.png)
 
