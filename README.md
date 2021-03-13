@@ -1,43 +1,15 @@
 # Convert number to english word assignment
 
-## File Structure
+## Project Structure
 
-`
-root
-|
-------public---- index.html
-|         
--------src      
-        |       
-        ------ App      
-        |           --- ConvertNumForm          
-        |           |
-        ------ components --- index.js ---> export all component from here
-        |           |
-        |           --- HistoryList
-        |                   |
-        |                   ---- HistoryItem
-        ---- helpers
-        |       |  
-        |       --- convert-function.js --> containing the algorithm for
-        |                                   converting number to english  
-        |
-        ------ index.js
-        |
-        ------ index.css
-`
+![alt text](https://res.cloudinary.com/reutby/image/upload/v1615625466/credorax-assignment/project_file_structurepng_vjj5jk.png)
+
+
 each component folder contain the same structure file.
 for example **HistoryList** component:
 
-`
-             ---- index.js ---> functional component
-             |
-             |
-HistoryList--|--- styles --- HistoryList.js ---> makeStyles (hook generator)
-             |               for styling the component 
-             |
-             ---- HistoryList.test.js ---> test file
-`
+![alt text](https://res.cloudinary.com/reutby/image/upload/v1615625471/credorax-assignment/component_directory_structute_io9pmx.png)
+
 
 ## Project details
 
