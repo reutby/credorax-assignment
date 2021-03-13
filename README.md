@@ -5,7 +5,7 @@
 ![alt text](https://res.cloudinary.com/reutby/image/upload/v1615625466/credorax-assignment/project_file_structurepng_vjj5jk.png)
 
 
-Each component directory as well as App directory contain the same folder structure.
+Each component directory as well as the App directory contain the same folder structure.
 For example **HistoryList** component:
 
 ![alt text](https://res.cloudinary.com/reutby/image/upload/v1615625471/credorax-assignment/component_directory_structute_io9pmx.png)
