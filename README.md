@@ -13,11 +13,11 @@ for example **HistoryList** component:
 
 ## Project details
 
-* Using react.js version 18.14 for building the client side web application.
-* Using functional component and react hooks.
-* Using Material-ui components, makeStyle hook generator and createMuiTheme for design and handle UI components. 
-* Responsive design for mobile devices, iPad and all in between... 
-* All states are managed in the App component
+* Using react.js version 18.14 for building the client-side web application.
+* Using the functional components and react hooks.
+* Using Material-ui components, makeStyle hook generator, and createMuiTheme for design and handle ui components.
+* Responsive design for mobile devices, iPad, and all in between...
+* All states are managed in the App component.
 
 ## Instructions
 * Clone the repository to your local environment.
